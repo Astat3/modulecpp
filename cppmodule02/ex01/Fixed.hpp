@@ -9,11 +9,12 @@ class Fixed
 {
 	private:
 		int _fixed_point;
-		static const int _fract_bits = 0;
+		static const int _fract_bits = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &copy);
-		Fixed(const int num); // fix vers int
+		Fixed(const int num);
+		Fixed(const float n);
 		float toFloat( void ) const;
 		int toInt( void ) const;
 		Fixed &operator=(const Fixed& rhs);

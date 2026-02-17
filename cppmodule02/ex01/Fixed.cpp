@@ -14,20 +14,19 @@ void Fixed::setRawBits(int const raw)
 }
 
 //fixed to 0;
-Fixed::Fixed()
+Fixed::Fixed():_fixed_point(0)
 {
 	std::cout<<"Constructor called !"<<std::endl;
-	this->_fixed_point = 0;
 }
 
 
-//fixed b(a);
+//fixed b(a) | copy constructor
 Fixed::Fixed(const Fixed& copy)
 {
-	std::cout<<"Copy constructor called !"<<std::endl;
 	this->_fixed_point = copy.getRawBits();
 }
 
+//overloading operator "="
 Fixed &Fixed::operator=(const Fixed &rhs)
 {
 	std::cout<<"Overload operator called"<<std::endl;
@@ -37,12 +36,13 @@ Fixed &Fixed::operator=(const Fixed &rhs)
 }
 
 //insert a floating representation of the fixed inserted as a parameters
+//overloading operator
 std::ostream &operator<<(std:: ostream& out, const Fixed &c)
 {
-	out<<c.toFloat()<<"Fixed: "<<c.getRawBits();
+	out<<c.toFloat();
 	return out;
 }
-
+//destructor
 Fixed::~Fixed()
 {
 	std::cout<<"Destructor called"<<std::endl;
@@ -50,7 +50,17 @@ Fixed::~Fixed()
 // int to fix
 Fixed::Fixed(const int num)
 {
+	std::cout<<"Int constructor Called !"<<std::endl;
 	this->_fixed_point = num << _fract_bits;
+}
+
+
+//constructor float to int.
+Fixed::Fixed(const float n)
+{
+	std::cout<<"Float constructor called"<<std::endl;
+
+	this->_fixed_point=roundf(n * (1 << _fract_bits));
 }
 //fixed to float 
 float Fixed::toFloat( void ) const
@@ -58,6 +68,7 @@ float Fixed::toFloat( void ) const
 	return (float)this->_fixed_point / (float)(1 << _fract_bits);
 }
 
+//fixed to int
 int Fixed::toInt(void )const{
 	return ((int)this->_fixed_point >> _fract_bits);
 }
