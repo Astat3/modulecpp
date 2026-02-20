@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 15:23:00 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 18:05:40 by agallot          ###   ########.fr       */
+/*   Updated: 2026/02/20 18:36:11 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ class ScarvTrap: public ClapTrap
 };
 
 
-std::ostream &operator<<(std:: ostream& out, const ClapTrap &c);
+std::ostream &operator<<(std:: ostream& out, const ScarvTrap &c);
 #endif

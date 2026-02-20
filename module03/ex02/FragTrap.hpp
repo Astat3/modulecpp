@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 18:27:13 by agallot           #+#    #+#             */
-/*   Updated: 2026/02/20 18:29:51 by agallot          ###   ########.fr       */
+/*   Updated: 2026/02/20 18:54:17 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@
 
 class Fragtrap: public ClapTrap
 {
-    public:
-    Fragtrap();
-    Fragtrap(std:: string name);
-    Fragtrap 
+	public:
+	Fragtrap();
+	Fragtrap(std:: string name);
+	~Fragtrap();
+	Fragtrap(const Fragtrap &cpy);
+	Fragtrap &operator =(const Fragtrap &rhs);
+    void highFivesGuys(void);
 };
 
-
+std::ostream &operator<<(std:: ostream& out, ClapTrap &c);
 #endif

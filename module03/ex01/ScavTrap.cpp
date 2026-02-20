@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 15:36:11 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 18:06:29 by agallot          ###   ########.fr       */
+/*   Updated: 2026/02/20 18:36:39 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,10 @@ ScarvTrap &ScarvTrap::operator=(const ScarvTrap &rhs)
 ScarvTrap::ScarvTrap(const ScarvTrap &cp)
 {
 	std::cout<<"Cpy constr Scar called"<<std::endl;
+}
+
+std::ostream &operator<<(std:: ostream& out, ScarvTrap &c)
+{
+	out<<c.Getname();
+	return (out);
 }
