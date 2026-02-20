@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 15:23:00 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 15:43:28 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/19 17:37:52 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/20 18:00:21 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-
-#pragma once
 #include "open.hpp"
+#include "ScavTrap.hpp"
 
-class ScarvTrap: public ClapTrap
+int main()
 {
-    public:
-    ScarvTrap(std:: string name);
-    ~ScarvTrap();
-};
+	ScarvTrap robot;
 
-#endif
+	robot.takeDamage(5);
+	return 0;
+}

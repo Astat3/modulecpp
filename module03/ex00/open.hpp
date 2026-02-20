@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:38:04 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 15:19:32 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/20 17:34:48 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,17 @@ class ClapTrap{
 		int _energy;
 		int _attack_damage;
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
-		std::string Getname();
+		std::string Getname()const;
 		ClapTrap(const ClapTrap& cpy);
+		ClapTrap &operator =(const ClapTrap &rhs);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		~ClapTrap();
 };
 
-std::ostream &operator<<(std:: ostream& out, ClapTrap &c);
+std::ostream &operator<<(std:: ostream& out, const ClapTrap &c);
 
 #endif

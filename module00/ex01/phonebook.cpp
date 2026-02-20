@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 15:35:10 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/14 17:15:52 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/20 14:55:30 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ PhoneBook::PhoneBook()
 void PhoneBook::add()
 {
 	contact new_contact;
-	/*init contact*/
-	new_contact.init();
+	if (new_contact.init() == false)
+		return;
 	this->_contact[_index] = new_contact;
 	this->_index++;
 	if (this->_index == 8)

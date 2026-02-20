@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:43:03 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 15:42:49 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/20 18:03:25 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 ClapTrap::ClapTrap(std:: string name) : _name(name), _hit(100), _energy(50), _attack_damage(20)
 {
-	std::cout<<"INITIALIZED"<<std::endl;
+	std::cout<<"CLAPSTRAP INITIALIZED"<<std::endl;
+}
+
+ClapTrap::ClapTrap():_hit(100), _energy(50), _attack_damage(20)
+{
+	// this->_name = "default";
+	std::cout<<"Default constructor called without arg" <<std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -34,8 +40,21 @@ std::ostream &operator<<(std:: ostream& out, ClapTrap &c)
 
 ClapTrap::ClapTrap(const ClapTrap &cp)
 {
-    std::cout<<"Constructor Copy called !"<<std::endl;
+    std::cout<<"Constructor Copy called !"<<&cp<<std::endl;
 }
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
+{
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_hit = rhs._hit;
+		this->_energy = rhs._energy;
+		this->_attack_damage = rhs._attack_damage;
+	}
+	return *this;
+}
+
 /*---------------------------------------------------------------------------------------------*/
 
 
@@ -52,14 +71,14 @@ void ClapTrap::attack(const std::string &target )
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout<<this->_name<<" Got a hit !";
-	this->_hit -= amount;
-	if (amount>this->_hit)
+	std::cout<<this->_name<<" Got a hit! ";
+	if (amount < this->_hit)
 	{
+		this->_hit -= amount;
 		std::cout<<"Only "<<this->_hit<<" remaining"<<std::endl;
 	}
 	else{
-		this->_hit -= amount;
+		this->_hit -= 0;
 		std::cout<<"No more HP I died !"<<std::endl;
 	}
 }

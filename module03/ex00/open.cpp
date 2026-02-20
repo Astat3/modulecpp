@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   open.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:43:03 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 15:20:11 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/20 17:41:18 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "open.hpp"
+
+ClapTrap::ClapTrap():  _hit(10), _energy(10), _attack_damage(0)
+{
+	this->_name = "DEFAULT";
+	std::cout<<"Init wihtout name"<<std::endl;
+}
 
 ClapTrap::ClapTrap(std:: string name) : _name(name), _hit(10), _energy(10), _attack_damage(0)
 {
@@ -22,7 +28,7 @@ ClapTrap::~ClapTrap()
 	std::cout<<"Destuctor called !"<<std::endl;
 }
 
-std::string ClapTrap::Getname()
+std::string ClapTrap::Getname()const
 {
 	return this->_name;
 }
@@ -34,8 +40,9 @@ std::ostream &operator<<(std:: ostream& out, ClapTrap &c)
 
 ClapTrap::ClapTrap(const ClapTrap &cp)
 {
-    std::cout<<"Constructor Copy called !"<<std::endl;
+	std::cout<<"Constructor Copy called !"<<cp._name<<std::endl;
 }
+
 /*---------------------------------------------------------------------------------------------*/
 
 
@@ -46,7 +53,7 @@ void ClapTrap::attack(const std::string &target )
 		std::cout<<"I can't attack !"<<std::endl;
 		return;
 	}
-	std::cout<<"Claptrap"<<this->_name<<" attacks"<<target<<", causing one points of damage !"<<std::endl;
+	std::cout<<"Claptrap"<<this->_name<<" attacks"<<target<<", causing "<< _attack_damage<<"points of damage !"<<std::endl;
 	this->_energy--;
 }
 
@@ -75,3 +82,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout<<amount<<" Hp restored"<<std::endl;
 }
 
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
+{
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_hit = rhs._hit;
+		this->_energy = rhs._energy;
+		this->_attack_damage = rhs._attack_damage;
+	}
+	return *this;
+}

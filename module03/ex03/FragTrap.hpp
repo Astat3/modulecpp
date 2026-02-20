@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 15:36:11 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 15:44:09 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/20 18:27:13 by agallot           #+#    #+#             */
+/*   Updated: 2026/02/20 18:29:51 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
+#pragma once
+#include "open.hpp"
 
-ScarvTrap::ScarvTrap(std:: string name): ClapTrap(name)
+class Fragtrap: public ClapTrap
 {
-	std::cout<<"ScarvTrap Created !"<<std::endl;
-}
-ScarvTrap::~ScarvTrap(){
-	std::cout<<"ScarvTrap Destroyed !"<<std::endl;
-}
+    public:
+    Fragtrap();
+    Fragtrap(std:: string name);
+    Fragtrap 
+};
+
+
+#endif

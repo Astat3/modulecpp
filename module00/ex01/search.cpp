@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   search.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:11:08 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/14 17:13:29 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/20 14:59:54 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "phone.hpp"
-#include <iostream>
-#include <iomanip> // INDISPENSABLE pour std::setw
-#include <cstdlib> // Pour atoi
+
 
 std::string format_text(std::string text)
 {

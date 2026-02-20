@@ -4,7 +4,10 @@ CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
 RM          = rm -f
 
-SRCS        = megaphone.cpp
+SRCS        = 	main.cpp\
+				open.cpp\
+				ScavTrap.cpp\
+
 
 OBJS        = $(SRCS:.cpp=.o)
 

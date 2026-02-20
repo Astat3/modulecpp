@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/19 17:37:52 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 17:29:04 by agallot          ###   ########.fr       */
+/*   Created: 2026/02/20 15:23:00 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/20 18:05:40 by agallot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#pragma once
 #include "open.hpp"
 
-int main()
+class ScarvTrap: public ClapTrap
 {
-	ClapTrap robot;
+    public:
+    ScarvTrap(std:: string name);
+    ScarvTrap();
+    ScarvTrap(const ScarvTrap &cp);
+    ~ScarvTrap();
+    void GuardGate();
+    void attack(const std::string &target);
+    ScarvTrap &operator =(const ScarvTrap &rhs);
+    
+};
 
-	ClapTrap cpy(robot);
-	return 0;
-}
+
+std::ostream &operator<<(std:: ostream& out, const ClapTrap &c);
+#endif
