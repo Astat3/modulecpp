@@ -15,7 +15,7 @@ void Fixed::setRawBits(int const raw)
 //fixed to 0;
 Fixed::Fixed():_fixed_point(0)
 {
-	std::cout<<"Constructor called !"<<std::endl;
+	//std::cout<<"Constructor called !"<<std::endl;
 }
 
 //fixed b(a) | copy constructor
@@ -37,7 +37,7 @@ std::ostream &operator<<(std:: ostream& out, const Fixed &c)
 //destructor
 Fixed::~Fixed()
 {
-	std::cout<<"Destructor called"<<std::endl;
+	//std::cout<<"Destructor called"<<std::endl;
 }
 // int to fix
 Fixed::Fixed(const int num)

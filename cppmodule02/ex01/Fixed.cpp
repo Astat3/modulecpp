@@ -16,7 +16,7 @@ void Fixed::setRawBits(int const raw)
 //fixed to 0;
 Fixed::Fixed():_fixed_point(0)
 {
-	std::cout<<"Constructor called !"<<std::endl;
+	std::cout<<"Default Constructor called !"<<std::endl;
 }
 
 

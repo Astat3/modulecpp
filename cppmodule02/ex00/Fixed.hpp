@@ -9,7 +9,7 @@ class Fixed
 {
 	private:
 		int _fixed_point;
-		static const int _fract_bits = 0;
+		static const int _fract_bits = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &copy); //copy constructor
