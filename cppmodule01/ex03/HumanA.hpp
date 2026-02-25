@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/25 14:48:51 by agallot           #+#    #+#             */
+/*   Updated: 2026/02/25 14:48:54 by agallot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMAN_A_HPP
 #define HUMAN_A_HPP
 
@@ -7,8 +19,7 @@
 
 class HumanA {
 private:
-  Weapon &_weapon; // elle doit être liée à une adresse mémoire dès sa creation
-                   // | Ne peut pas être nulle
+  Weapon &_weapon;
   std::string _name;
 
 public:

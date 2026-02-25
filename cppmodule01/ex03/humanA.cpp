@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   humanA.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/25 14:48:23 by agallot           #+#    #+#             */
+/*   Updated: 2026/02/25 14:48:29 by agallot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanA.hpp"
 
-
-// En c++ une '&' doit être init dès sa naissance, si on attend d'être rentré dans la fonctio c'est deja trop tard.
 //takes the weapon in the constructor.
 HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon), _name(name)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agallot <agallot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/25 14:49:08 by agallot           #+#    #+#             */
+/*   Updated: 2026/02/25 14:49:42 by agallot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMAN_B_HPP
 #define HUMAN_B_HPP
 #pragma once
@@ -6,7 +18,7 @@
 class HumanB {
 private:
   Weapon *
-      _weapon; // varible standart qui occupe une taille fixe->8octet sur 64bits
+      _weapon;
   std::string _name;
 
 public:
