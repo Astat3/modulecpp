@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   function.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 14:31:49 by agallot           #+#    #+#             */
-/*   Updated: 2026/02/22 18:18:05 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/13 17:33:57 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/25 19:04:09 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "harl.hpp"
 
-
-int	main(int argc, char **argv)
+void Harl::complain(std::string level)
 {
-	int		i;
-	int		j;
+	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 
-	j = -1;
-	if (argc < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	while (argc > 1 && argv && argv[++j])
+	void (Harl::*ptr_func[])(void) = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
+
+	for (int i = 0; i < 4; i++)
 	{
-		i = -1;
-		while (j > 0 && argv[j][++i])
-			std::cout << (char)std::toupper(argv[j][i]);
+		if (levels[i] == level)
+		{
+			(this->*ptr_func[i])(); // on donne l'instance this au compilateur 
+			return;
+		}
 	}
-	std::cout << std::endl;
-	return (0);
 }
