@@ -1,7 +1,6 @@
 #include "Fixed.hpp"
 
 int main(void) {
-  std::cout << "--- Standard Subject Test ---" << std::endl;
   Fixed a;
   Fixed const b(Fixed(5.05f) * Fixed(2));
 
@@ -15,7 +14,6 @@ int main(void) {
 
   std::cout << Fixed::max(a, b) << std::endl;
 
-  std::cout << "\n--- Exhaustive Arithmetic Tests ---" << std::endl;
   Fixed c(10.5f);
   Fixed d(2.0f);
   std::cout << "c: " << c << ", d: " << d << std::endl;
@@ -24,7 +22,6 @@ int main(void) {
   std::cout << "c * d = " << c * d << " (expected 21)" << std::endl;
   std::cout << "c / d = " << c / d << " (expected 5.25)" << std::endl;
 
-  std::cout << "\n--- Comparison Operators Tests ---" << std::endl;
   std::cout << "c > d : " << (c > d) << " (expected 1)" << std::endl;
   std::cout << "c < d : " << (c < d) << " (expected 0)" << std::endl;
   std::cout << "c >= d: " << (c >= d) << " (expected 1)" << std::endl;
@@ -32,7 +29,6 @@ int main(void) {
   std::cout << "c == c: " << (c == c) << " (expected 1)" << std::endl;
   std::cout << "c != d: " << (c != d) << " (expected 1)" << std::endl;
 
-  std::cout << "\n--- Decrement Tests ---" << std::endl;
   Fixed e(5.0f);
   std::cout << "e initially: " << e << std::endl;
   std::cout << "--e: " << --e << std::endl;
@@ -40,7 +36,6 @@ int main(void) {
   std::cout << "e--: " << e-- << std::endl;
   std::cout << "e: " << e << std::endl;
 
-  std::cout << "\n--- Min/Max Tests ---" << std::endl;
   std::cout << "Min(c, d): " << Fixed::min(c, d) << std::endl;
   std::cout << "Max(c, d): " << Fixed::max(c, d) << std::endl;
 

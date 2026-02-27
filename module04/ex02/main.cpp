@@ -6,7 +6,7 @@
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 15:25:22 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/26 19:48:45 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/26 20:04:27 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main() {
   Animal testAnimal;
   const Animal *testAnimalPtr = new Animal();
   delete testAnimalPtr;
-
   return 0;
 }
