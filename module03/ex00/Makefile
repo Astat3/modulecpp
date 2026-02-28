@@ -1,10 +1,10 @@
-NAME        = open
+NAME        = claptrap
 
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
 RM          = rm -f
 
-SRCS        = 	open.cpp\
+SRCS        = 	ClapTrap.cpp\
 				main.cpp
 
 OBJS        = $(SRCS:.cpp=.o)
@@ -25,4 +25,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re%   
+.PHONY: all clean fclean re

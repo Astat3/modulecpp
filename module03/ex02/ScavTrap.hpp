@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/28 14:38:49 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/28 14:56:54 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/28 14:51:05 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/28 15:00:53 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include <iostream>
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main() {
-  ScavTrap a;
+#include "ClapTrap.hpp"
 
-  ScavTrap b("nkn");
+class ScavTrap : public ClapTrap {
+public:
+  ScavTrap();
+  ScavTrap(std::string name);
+  ScavTrap(const ScavTrap &cpy);
+  ScavTrap &operator=(const ScavTrap &rhs);
+  ~ScavTrap();
 
-  ScavTrap c(b);
-  c.takeDamage(0);
+  void attack(const std::string &target);
+  void guardGate();
+};
 
-  ScavTrap d("kezane");
-  d = b;
-
-  b.attack("eanze");
-  b.takeDamage(50);
-  b.beRepaired(25);
-  b.guardGate();
-
-  b.takeDamage(100);
-  b.attack("eazhbea");
-  b.guardGate();
-
-  return 0;
-}
+#endif

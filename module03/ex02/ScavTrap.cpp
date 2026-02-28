@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/28 14:49:29 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/28 14:49:30 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/28 14:51:00 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/28 15:00:56 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"

@@ -5,27 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 18:27:13 by agallot           #+#    #+#             */
-/*   Updated: 2026/02/20 18:54:17 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/28 14:55:49 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/28 14:55:52 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
-#pragma once
-#include "open.hpp"
+#include "ClapTrap.hpp"
 
-class Fragtrap: public ClapTrap
-{
-	public:
-	Fragtrap();
-	Fragtrap(std:: string name);
-	~Fragtrap();
-	Fragtrap(const Fragtrap &cpy);
-	Fragtrap &operator =(const Fragtrap &rhs);
-    void highFivesGuys(void);
+class FragTrap : public ClapTrap {
+public:
+  FragTrap();
+  FragTrap(std::string name);
+  FragTrap(const FragTrap &cpy);
+  FragTrap &operator=(const FragTrap &rhs);
+  ~FragTrap();
+
+  void highFivesGuys(void);
 };
 
-std::ostream &operator<<(std:: ostream& out, ClapTrap &c);
 #endif

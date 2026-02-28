@@ -1,13 +1,12 @@
-NAME        = open
+NAME        = scavtrap
 
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
 RM          = rm -f
 
-SRCS        = 	main.cpp\
-				open.cpp\
+SRCS        = 	ClapTrap.cpp\
 				ScavTrap.cpp\
-
+				main.cpp
 
 OBJS        = $(SRCS:.cpp=.o)
 
@@ -27,4 +26,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re%   
+.PHONY: all clean fclean re

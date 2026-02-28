@@ -5,58 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 18:38:25 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/20 18:56:42 by adamgallot       ###   ########.fr       */
+/*   Created: 2026/02/28 14:55:45 by adamgallot        #+#    #+#             */
+/*   Updated: 2026/02/28 14:55:46 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-Fragtrap::Fragtrap()
-{
-	std::cout<<"Robot with no name"<<std::endl;
-	this->_name = "Default";
-	this->_energy = 100;
-	this->_hit = 100;
-	this->_attack_damage = 30;
+FragTrap::FragTrap() : ClapTrap("DEFAULT") {
+  this->_hit = 100;
+  this->_energy = 100;
+  this->_attack_damage = 30;
+  std::cout << "FragTrap " << _name << "Default constructor"<< std::endl;
 }
 
-Fragtrap::Fragtrap(std:: string name)
-{
-	std::cout<<"Robot: "<<name<<std::endl;
-	this->_name = name;
-	this->_energy = 100;
-	this->_hit = 100;
-	this->_attack_damage = 30;
-	
-}
-Fragtrap::~Fragtrap()
-{
-	std::cout<<"FragTrap deconstructed"<<std::endl;
-}
-Fragtrap &Fragtrap::operator=(const Fragtrap&rhs)
-{
-	if (this != &rhs)
-	{
-		this->_name = rhs._name;
-		this->_hit = rhs._hit;
-		this->_energy = rhs._energy;
-		this->_attack_damage = rhs._attack_damage;
-	}
-	return *this;
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+  this->_hit = 100;
+  this->_energy = 100;
+  this->_attack_damage = 30;
+  std::cout << "FragTrap " << _name<< "String constructor" << std::endl;
 }
 
-Fragtrap::Fragtrap(const Fragtrap &cpy)
-{
-	std::cout<<"Copy Frag Called"<<cpy._name<<std::endl;
+FragTrap::FragTrap(const FragTrap &cpy) : ClapTrap(cpy) {
+  std::cout << "FragTrap " << _name << "Copy Constructor"<< std::endl;
 }
 
-std::ostream &operator<<(std:: ostream& out, Fragtrap &c)
-{
-	out<<c.Getname();
-	return (out);
+FragTrap &FragTrap::operator=(const FragTrap &rhs) {
+  std::cout << "FragTrap " << _name << "overlod Operator"<< rhs._name<<std::endl;
+  if (this != &rhs) {
+    this->_name = rhs._name;
+    this->_hit = rhs._hit;
+    this->_energy = rhs._energy;
+    this->_attack_damage = rhs._attack_damage;
+  }
+  return *this;
 }
 
-void Fragtrap::highFivesGuys(void){
-    std::cout<<"positive high-fives request on the standard output."<<std::endl;
+FragTrap::~FragTrap() {
+  std::cout << "FragTrap " << _name << " is destroyed!"<< std::endl;
+}
+
+void FragTrap::highFivesGuys(void) {
+  if (_hit > 0)
+    std::cout << "FragTrap " << _name<< "High Five"<< std::endl;
+  else
+    std::cout << "FragTrap " << _name<< " cannot ask for a high five because it is destroyed!"<< std::endl;
 }
