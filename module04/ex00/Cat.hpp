@@ -13,7 +13,7 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animals.hpp"
+#include "Animal.hpp"
 
 class Cat : public Animal
 {

@@ -1,47 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animals.cpp                                        :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 15:34:43 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/26 16:23:53 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/02/28 17:42:19 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animals.hpp"
+#include "AAnimal.hpp"
 
-
-Animal::Animal()
-{
-    std::cout<<"Default Animal created"<<std::endl;
-    this->type = "Default";
+AAnimal::AAnimal() {
+  std::cout << "Default AAnimal created" << std::endl;
+  this->_type = "Default";
 }
 
-Animal::~Animal()
-{
-    std::cout<<"Default Animal killed"<<std::endl;
+AAnimal::~AAnimal() { std::cout << "Default AAnimal killed" << std::endl; }
+
+std::string AAnimal::getType() const { return this->_type; }
+
+AAnimal &AAnimal::operator=(const AAnimal &rhs) {
+  if (this != &rhs) {
+    this->_type = rhs._type;
+  }
+  return *this;
 }
 
-std::string Animal::getType ()const{
-    return this->type;
-}
-
-void Animal::makeSound()const{
-    return;
-}
-
-Animal &Animal::operator=(const Animal &rhs)
-{
-    if (this != &rhs)
-    {
-        this->type = rhs.type;
-    }
-    return *this;
-}
-
-Animal::Animal(const Animal &cpy)
-{
-    std::cout<<"Copy of: "<<cpy.getType()<<std::endl;
+AAnimal::AAnimal(const AAnimal &cpy) {
+  this->_type = cpy._type;
+  std::cout << "Copy of: " << cpy.getType() << std::endl;
 }

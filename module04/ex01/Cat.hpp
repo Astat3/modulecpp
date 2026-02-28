@@ -14,7 +14,7 @@
 #define CAT_HPP
 #include "Brain.hpp"
 
-#include "Animals.hpp"
+#include "Animal.hpp"
 
 class Cat : public Animal
 {

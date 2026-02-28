@@ -14,9 +14,9 @@
 #define CAT_HPP
 #include "Brain.hpp"
 
-#include "Animals.hpp"
+#include "AAnimal.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
     private:
         Brain* _brain;
