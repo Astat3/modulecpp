@@ -6,7 +6,7 @@
 /*   By: adamgallot <adamgallot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 15:25:22 by adamgallot        #+#    #+#             */
-/*   Updated: 2026/02/26 18:38:17 by adamgallot       ###   ########.fr       */
+/*   Updated: 2026/03/01 18:13:29 by adamgallot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,41 @@
 #include <iostream>
 
 int main() {
-  std::cout << "--- Test 1: Array of Animals ---" << std::endl;
   const Animal *j = new Dog();
   const Animal *i = new Cat();
   delete j;
   delete i;
 
-  std::cout << "\n--- Test 2: Copy constructor leak/crash ---" << std::endl;
+  const Animal *animals[4];
+  for (int k = 0; k < 2; k++)
+    animals[k] = new Dog();
+  for (int k = 2; k < 4; k++)
+    animals[k] = new Cat();
+
+  for (int k = 0; k < 4; k++)
+    delete animals[k];
+
+  std::cout << "\n--- Deep Copy Scoped Test ---" << std::endl;
   {
-    Dog dogA;
-    Dog dogB = dogA;
+    Dog basic;
+    {
+      Dog tmp = basic;
+      basic = tmp;
+    }
+    Dog *heapDog = new Dog();
+    Dog *heapDog2 = new Dog(*heapDog);
+    delete heapDog;
+    heapDog2->makeSound();
+    delete heapDog2;
   }
 
-  std::cout << "\n--- Test 3: Assignment operator issue ---" << std::endl;
-  {
-    Cat catA;
-    Cat catB;
-    catB = catA;
+  Dog myDog;
+  Dog *dPtr = &myDog;
+  myDog = *dPtr;
 
-    Brain brainA;
-    Brain brainB;
-    brainB = brainA;
-  }
-
-  std::cout << "\n--- Test 4: Array test required by subject ---" << std::endl;
-  {
-    const Animal *animals[4];
-    for (int k = 0; k < 2; k++)
-      animals[k] = new Dog();
-    for (int k = 2; k < 4; k++)
-      animals[k] = new Cat();
-
-    for (int k = 0; k < 4; k++)
-      delete animals[k];
-  }
+  Cat myCat;
+  Cat *cPtr = &myCat;
+  myCat = *cPtr;
 
   return 0;
 }
